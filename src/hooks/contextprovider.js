@@ -1,16 +1,17 @@
 import React,{createContext} from 'react';
 
-const name = "omkar",
-Context = createContext();
+const context = createContext(),
+ user = "omkar";
 
 const ContextProvider = (props)=>{
-
-
   return(
-   <Context.Provider value={name}>
-     {props.child}
-   </Context.Provider>
+    <context.Provider value={user}>
+      {props.children}
+    </context.Provider>
   );
 };
-export default ContextProvider;
-export {Context};
+
+//can use {children} here
+
+export default context;
+export {ContextProvider};

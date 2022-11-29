@@ -1,18 +1,16 @@
-import React,{useContext} from 'react';
-import Title,{Button} from "../componenets/common.js";
-import ContextProvider,{Context} from "./contextprovider.js";
+import React,{useContext,createContext} from 'react';
+import context,{ContextProvider } from "./contextprovider.js";
+
 
 const Usecontext = ()=>{
-
-  const name = useContext(Context)
-  ,child =   <div>
-  <Title title="Context"/>
-</div>;
-console.log(name)
   return(
-    <ContextProvider >
-    <Title title={name}/>
-    </ContextProvider>
+  <ContextProvider children={<Title/>}/>
+      
   );
+};
+
+const Title = ()=>{
+  const user = useContext(context);
+  return (<h1>{user}</h1>)
 };
 export default Usecontext;
