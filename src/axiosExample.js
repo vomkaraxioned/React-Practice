@@ -3,19 +3,33 @@ import axios from "axios";
 
 const AxiosExample = ()=>{
 
-const [data,setData] = useState();
-
+const [data,setData] = useState([]),
+[error,setError] = useState(""),
+getApi = async()=>{
+  try {
+    const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+    setData(res.data);
+  }catch(e) {
+    setError(e.message);
+  }
+};
   useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then(res=>setData(res)).catch(err=>setData(err));
-    console.log(data)
-  },[]);
+    getApi()
+  },[data]);
 
-  return(
-    <>
-    <h1>Axios</h1>
-    </>
-  );
+  if(error!="") {
+    return <h1>{error}</h1>
+  }else {
+    return(
+      <ul>
+          {
+          data.map(item =>{
+            return(<li key={item.id}>{item.title}</li>);
+          })}
+      </ul>
+        );
+  }
 
 };
-
+ 
 export default AxiosExample;
