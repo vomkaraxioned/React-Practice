@@ -9,12 +9,16 @@
     Api.get("/posts").then(res=>setData(res.data)).catch(err=>setError(err.message));
   };
 
-  useEffect(getData,[]);
+  useEffect(()=>{
+    getData;
+    return 
+  },[]);
 
     if(error) {
       return (<h1>{error}</h1>);
     }else {
-      return(<ul>
+      return(
+      <ul>
         {data.map(post=>{
           return <li key={post.id}>{post.title}</li>
         })}
