@@ -9,7 +9,7 @@ const Usecallback = ()=>{
 
   return(
     <div>
-      <Title title="usestate"/>
+      <Title title="useCallback"/>
       <Title title={state}/>
       <Button name="increment" handler={incre}/>
     </div>

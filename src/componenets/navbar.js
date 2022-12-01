@@ -16,14 +16,14 @@ const Navbar = ()=>{
       <li><Link to="/usememo">UseMemo</Link></li>
       <li><Link to="/usecallback">UseCallbaCK</Link></li>
     </ul>
-    </BrowserRouter>
-      <Routes>
-        <Route path="/" element={Usestate}/>
-        <Route path="/useeffect" element={Useeffect}/>
-        <Route path="/usecontext" element={Usecontext}/>
-        <Route path="/usememo" element={Usememo}/>
-        <Route path="/usecallback" element={Usecallback}/>
+    <Routes>
+        <Route path="/" element={<Usestate/>}/>
+        <Route path="/useeffect" element={<Useeffect/>}/>
+        <Route path="/usecontext" element={<Usecontext/>}/>
+        <Route path="/usememo" element={<Usememo/>}/>
+        <Route path="/usecallback" element={<Usecallback/>}/>
       </Routes>
+    </BrowserRouter>
     </>
   );
 };
