@@ -4,9 +4,9 @@ const Title = (props)=>{
   return(<h1>{props.title}</h1>);
 };
 
-const Button = (props)=>{
+const Button = ({handler,name})=>{
 
-  return(<button onClick={props.handler}>{props.name}</button>)
+  return(<button onClick={handler}>{name}</button>)
 
 };
 export default Title;
