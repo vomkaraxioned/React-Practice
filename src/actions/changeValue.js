@@ -1,5 +1,9 @@
-const increment = ()=>{type:"incre"},
-decrement = ()=>()=>{type:"decre"};
+const increment = ()=>{
+  return {type:"incre"};
+},
+decrement = ()=>{
+   return {type:"decre"};
+};
 
 export default increment;
 export {decrement};

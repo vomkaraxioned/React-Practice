@@ -1,18 +1,16 @@
 import './App.css';
-import value from "./store.js";
-import {useDispatch,Provider} from "react-redux";
+import {useDispatch,useSelector} from "react-redux";
 import increment, { decrement } from './actions/changeValue';
 
-
+// store.subscribe(()=>console.log(store.getState()))
 function App() {
+  const dispatch = useDispatch();
   return (
-   <Provider store={value}>
-      <div>
-    <button onClick={()=>useDispatch(increment)}>+</button>
-    <h1>{}</h1>
-    <button onClick={()=>useDispatch(decrement)}>-</button>
+    <div>
+    <button onClick={()=>dispatch(increment())}>+</button>
+    <h1>{value}</h1>
+    <button onClick={()=>dispatch(decrement())}>-</button>
     </div>
-   </Provider>
   );
 }
 
