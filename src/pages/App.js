@@ -1,18 +1,20 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/Navbar/index";
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import Usestate from "./useState";
 import Useeffect from "./useeffect";
 import Usecontext from "./usecontext";
 import Usememo from "./usememo";
 import Usecallback from "./callback";
+import pages from "../objects";
+import PagesContext from "../context/PagesContext";
 
-
-const Pages = ["usestate","useeffect","usecontext","usememo","usecallback"];
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar pages={Pages}/>
+    <PagesContext.Provider value={pages}>
+    <Navbar />
+    </PagesContext.Provider>
     <Routes>
         <Route path="/" element={<Usestate/>}/>
         <Route path="/useeffect" element={<Useeffect/>}/>

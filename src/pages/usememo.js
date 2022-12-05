@@ -1,6 +1,6 @@
 import React,{useState,useMemo} from 'react';
-import Button from "../components/Button";
-import Title from "../components/Title";
+import Button from "../components/Button/index";
+import Title from "../components/Title/index";
 
 const Usememo = ()=>{
 

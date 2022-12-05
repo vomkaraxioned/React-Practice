@@ -1,13 +1,10 @@
-import {Link} from "react-router-dom";
+import NavItem from "./NavItem";
 
-const Navbar = ({pages})=>{
+const Navbar = ()=>{
   return(
     <>
     <ul>
-    {pages.map((page,i)=>{
-      const path = (i==0)?"/":page;
-      return  <li key={page}><Link to={path}>{page}</Link></li>
-    })}
+    <NavItem/>
     </ul>
     </>
   );
