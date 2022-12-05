@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
-import Title,{Button} from "../componenets/common.js";
+import Button from "../components/Button";
+import Title from "../components/Title";
 
 const Useeffect = ()=>{
 
